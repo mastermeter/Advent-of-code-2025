@@ -2,7 +2,7 @@ def preprocess_data():
     grid = []
     with open("input.txt", "r") as file:
         for line in file:
-            grid.append(line.rstrip("\n"))  # ou list(line.rstrip("\n")) si tu veux une liste de caractères
+            grid.append(line.rstrip("\n")) 
     return grid
 
 data = preprocess_data()
