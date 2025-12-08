@@ -1,16 +1,17 @@
 def preprocess_data():
     input = []
-    file = open("input.txt","r")
+    file = open("test.txt","r")
     data = file.read().split("\n")
     for i in range(len(data)):
-        data[i]=data[i].split()
+        data[i]=list(data[i])
     
                     
     return data
 
 input = preprocess_data()
 
-print(input)
+for i in input:
+    print(i)
 
 l = len(input[0])
 L = len(input)
@@ -18,20 +19,27 @@ L = len(input)
 
 t = []
 for i in range(l):
+    print('0')
     c=[]
-    for j in range(L):
+    for j in range(L,0):
+        n=""
         if input[j][i]=="*":
+            print("1")
             a = 1
             for k in c:
                 a*=int(k)
         elif input[j][i]=="+":
+            print('2')
             a = 0
             for k in c:
                 a+=int(k)
         else:
-            c.append(input[j][i])
-    t.append(a)
-print(sum(t))
+            print('3')
+            if input[j][i]=='':
+                pass
+            else:
+                n+=input[j][i]
+        print(n)
 
         
     
